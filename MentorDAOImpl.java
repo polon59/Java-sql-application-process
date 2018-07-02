@@ -4,10 +4,9 @@ import java.util.List;
 import java.lang.Exception;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-/**
- * MentorDAOImpl implements MentorDAO
- */
+
 
 public class MentorDAOImpl implements MentorDAO {
 
@@ -22,12 +21,12 @@ public class MentorDAOImpl implements MentorDAO {
 
 
     @Override
-    public List<String[]> getMentorsFullNames(){
+    public List<String[]> getMentorsFullNames() throws SQLException {
 
         String[] row;
         List<String[]> results = new ArrayList<>();
 
-        try {
+        // try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT first_name, last_name FROM mentors;" );
 
@@ -42,12 +41,18 @@ public class MentorDAOImpl implements MentorDAO {
             stmt.close();
             connection.close();
 
-        } catch ( Exception e ) {
-            System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-            System.exit(0);
-        }
+        // } catch ( Exception e ) {
+        //     System.err.println( e.getClass().getName()+": "+ e.getMessage() );
+        //     System.exit(0);
+        // }
 
         return results;
     }
+
+
+    // @Override
+    // public List<String[]> getMiskolcMentorsNicknames(){
+
+    // }
     
 }
