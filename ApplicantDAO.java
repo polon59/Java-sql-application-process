@@ -7,11 +7,11 @@ public interface ApplicantDAO {
 
     List<String[]> getFullTable() throws SQLException;
     
-    List<String[]> getFullNameByLastName() throws SQLException;
+    List<String[]> getFullNameByFirstName() throws SQLException; // 3
 
-    List<String[]> getFullNameByEmail() throws SQLException;
+//     List<String[]> getFullNameByEmail() throws SQLException;
 
-    void updatePhoneNumberByName() throws SQLException;
+//     void updatePhoneNumberByName() throws SQLException;
 
-    void getRowByName() throws SQL EXCEPtion;
+//     void getRowByName() throws SQLException;
 }

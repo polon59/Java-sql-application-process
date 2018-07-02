@@ -9,6 +9,7 @@ public class Test {
     public static void main(String[] args) {
         View display = new View();
         MentorDAOImpl mentorDAOImpl = new MentorDAOImpl();
+        ApplicantDAOImpl applicantDAOImpl = new ApplicantDAOImpl();
         
 
         try {
@@ -17,6 +18,13 @@ public class Test {
 
         List<String[]> miskolcNicknames = mentorDAOImpl.getMiskolcMentorsNicknames();
         display.displayResultTable(miskolcNicknames);
+
+        List<String[]> applicantsTable = applicantDAOImpl.getFullTable();
+        display.displayResultTable(applicantsTable);
+
+        List<String[]> fullNameByFirstName =applicantDAOImpl.getFullNameByFirstName();
+        display.displayResultTable(fullNameByFirstName);
+        
 
         } catch ( SQLException e ) {
             e.printStackTrace();

@@ -31,8 +31,25 @@ public class ApplicantDAOImpl implements ApplicantDAO {
             resultRow[0] = rs.getString("first_name");
             resultRow[1] = rs.getString("last_name");
             resultRow[2] = rs.getString("phone_number");
-            resultRow[1] = rs.getString("email");
-            resultRow[1] = rs.getString("application_code");
+            resultRow[3] = rs.getString("email");
+            resultRow[4] = rs.getString("application_code");
+            resultsTable.add(resultRow);
+        }
+
+        return resultsTable;
+    }
+
+
+    public List<String[]> getFullNameByFirstName() throws SQLException{
+        resultsTable = new ArrayList<>();
+        
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery( "SELECT first_name ||' '|| last_name as full_name, phone_number FROM applicants WHERE first_name = 'Carol';" );
+
+        while ( rs.next() ) {
+            resultRow = new String[2];
+            resultRow[0] = rs.getString("full_name");
+            resultRow[1] = rs.getString("phone_number");
             resultsTable.add(resultRow);
         }
 
