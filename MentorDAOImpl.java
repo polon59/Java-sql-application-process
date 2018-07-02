@@ -26,7 +26,6 @@ public class MentorDAOImpl implements MentorDAO {
         String[] row;
         List<String[]> results = new ArrayList<>();
 
-        // try {
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT first_name, last_name FROM mentors;" );
 
@@ -40,11 +39,6 @@ public class MentorDAOImpl implements MentorDAO {
             rs.close();
             stmt.close();
             connection.close();
-
-        // } catch ( Exception e ) {
-        //     System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-        //     System.exit(0);
-        // }
 
         return results;
     }
