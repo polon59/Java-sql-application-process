@@ -13,7 +13,7 @@ public class Test {
 
         try {
         List<String[]> mentorsFullNames = mentorDAOImpl.getMentorsFullNames();
-        display.displayResult(mentorsFullNames);
+        display.displayResultTable(mentorsFullNames);
 
         } catch ( SQLException e ) {
             e.printStackTrace();

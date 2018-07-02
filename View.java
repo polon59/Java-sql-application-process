@@ -7,7 +7,7 @@
 
 public class View {
 
-    public void displayResult(List<String[]> result){
+    public void displayResultTable(List<String[]> result){
 
         for(String[] row : result){
 
