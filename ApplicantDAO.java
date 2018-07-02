@@ -10,4 +10,8 @@ public interface ApplicantDAO {
     List<String[]> getFullNameByLastName() throws SQLException;
 
     List<String[]> getFullNameByEmail() throws SQLException;
+
+    void updatePhoneNumberByName() throws SQLException;
+
+    void getRowByName() throws SQL EXCEPtion;
 }
