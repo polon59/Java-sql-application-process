@@ -8,5 +8,5 @@ public interface MentorDAO {
     
     List<String[]> getMentorsFullNames() throws SQLException;
 
-    //List<String[]> getMiskolcMentorsNicknames() throws SQLException;
+    List<String[]> getMiskolcMentorsNicknames() throws SQLException;
 }

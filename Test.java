@@ -15,6 +15,9 @@ public class Test {
         List<String[]> mentorsFullNames = mentorDAOImpl.getMentorsFullNames();
         display.displayResultTable(mentorsFullNames);
 
+        List<String[]> miskolcNicknames = mentorDAOImpl.getMiskolcMentorsNicknames();
+        display.displayResultTable(miskolcNicknames);
+
         } catch ( SQLException e ) {
             e.printStackTrace();
         }
