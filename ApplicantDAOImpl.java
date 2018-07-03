@@ -86,5 +86,26 @@ public class ApplicantDAOImpl implements ApplicantDAO {
         stmt.executeUpdate( "INSERT INTO applicants (first_name, last_name, phone_number, email, application_code) VALUES ('Markus','Schaffarzyk', '003620/725-2666','djnovus@groovecoverage.com',54823);" );
         display.displayMessage("Records created successfully");
     }
+
+
+    @Override
+    public List<String[]> getApplicantByApplicationCode() throws SQLException{
+        resultsTable = new ArrayList<>();
+        
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery( "SELECT * FROM applicants WHERE application_code = 54823;" );
+
+        while ( rs.next() ) {
+            resultRow = new String[5];
+            resultRow[0] = rs.getString("first_name");
+            resultRow[1] = rs.getString("last_name");
+            resultRow[2] = rs.getString("phone_number");
+            resultRow[3] = rs.getString("email");
+            resultRow[4] = rs.getString("application_code");
+            resultsTable.add(resultRow);
+        }
+
+        return resultsTable;
+    }
     
 }
