@@ -20,6 +20,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 
     }
 
+
+    @Override
     public List<String[]> getFullTable() throws SQLException{
         resultsTable = new ArrayList<>();
         
@@ -40,6 +42,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
     }
 
 
+    @Override
     public List<String[]> getFullNameByFirstName() throws SQLException{
         resultsTable = new ArrayList<>();
         
@@ -55,4 +58,31 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 
         return resultsTable;
     }
+
+
+    @Override
+    public List<String[]> getFullNameByEmail() throws SQLException{
+        resultsTable = new ArrayList<>();
+        
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery( "SELECT first_name ||' '|| last_name as full_name, email FROM applicants WHERE email LIKE  '%@adipiscingenimmi.edu';" );
+
+        while ( rs.next() ) {
+            resultRow = new String[2];
+            resultRow[0] = rs.getString("full_name");
+            resultRow[1] = rs.getString("email");
+            resultsTable.add(resultRow);
+        }
+
+        return resultsTable;
+    }
+
+
+    @Override
+    public void addNewApplicant() throws SQLException{
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery( "INSERT INTO applicants (first_name, last_name, phone_number, email, application_code)VALUES ('Markus','Schaffarzyk', '003620/725-2666','djnovus@groovecoverage.com',54823);" );
+        
+    }
+    
 }
