@@ -28,7 +28,9 @@ public class Test {
         List<String[]> fullNameByEmail = applicantDAOImpl.getFullNameByEmail();
         display.displayResultTable(fullNameByEmail);
 
-        applicantDAOImpl.addNewApplicant();
+        // applicantDAOImpl.addNewApplicant();
+        // List<String[]> fullApplicantInfo = applicantDAOImpl.getApplicantByApplicationCode();
+        // display.displayResultTable(fullApplicantInfo);
 
         } catch ( SQLException e ) {
             e.printStackTrace();

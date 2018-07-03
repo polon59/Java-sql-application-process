@@ -11,9 +11,11 @@ public interface ApplicantDAO {
 
     List<String[]> getFullNameByEmail() throws SQLException; // 4
 
-    //void addNewApplicant() throws SQLException; // 5
+    void addNewApplicant() throws SQLException; // 5.1
 
-//     void updatePhoneNumberByName() throws SQLException;
+    List<String[]> getApplicantByApplicationCode() throws SQLException; // 5.2
+
+    void updatePhoneNumberByName() throws SQLException; // 6
 
 //     void getRowByName() throws SQLException;
 }

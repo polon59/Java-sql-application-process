@@ -108,4 +108,11 @@ public class ApplicantDAOImpl implements ApplicantDAO {
         return resultsTable;
     }
     
+
+    @Override
+    public void updatePhoneNumberByName() throws SQLException{
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate( "UPDATE applicants SET phone_number = 003670/223-7459 WHERE first_name = 'Jemima' AND last_name = 'Foreman';" );
+        display.displayMessage("Phone number updated successfully");
+    }
 }
