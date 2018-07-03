@@ -28,6 +28,8 @@ public class Test {
         List<String[]> fullNameByEmail = applicantDAOImpl.getFullNameByEmail();
         display.displayResultTable(fullNameByEmail);
 
+        applicantDAOImpl.addNewApplicant();
+
         } catch ( SQLException e ) {
             e.printStackTrace();
         }

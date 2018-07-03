@@ -12,11 +12,13 @@ public class ApplicantDAOImpl implements ApplicantDAO {
     private Connection connection;
     private String[] resultRow;
     private List<String[]> resultsTable;
+    private View display;
 
 
     public ApplicantDAOImpl(){
         postgreSQLJDBC = new PostgreSQLJDBC();
         connection = postgreSQLJDBC.getConnection();
+        display = new View();
 
     }
 
@@ -81,8 +83,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
     @Override
     public void addNewApplicant() throws SQLException{
         Statement stmt = connection.createStatement();
-        ResultSet rs = stmt.executeQuery( "INSERT INTO applicants (first_name, last_name, phone_number, email, application_code)VALUES ('Markus','Schaffarzyk', '003620/725-2666','djnovus@groovecoverage.com',54823);" );
-        
+        stmt.executeUpdate( "INSERT INTO applicants (first_name, last_name, phone_number, email, application_code) VALUES ('Markus','Schaffarzyk', '003620/725-2666','djnovus@groovecoverage.com',54823);" );
+        display.displayMessage("Records created successfully");
     }
     
 }

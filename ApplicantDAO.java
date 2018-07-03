@@ -11,7 +11,7 @@ public interface ApplicantDAO {
 
     List<String[]> getFullNameByEmail() throws SQLException; // 4
 
-    void addNewApplicant() throws SQLException; // 5
+    //void addNewApplicant() throws SQLException; // 5
 
 //     void updatePhoneNumberByName() throws SQLException;
 
