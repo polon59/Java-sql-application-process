@@ -115,4 +115,12 @@ public class ApplicantDAOImpl implements ApplicantDAO {
         stmt.executeUpdate( "UPDATE applicants SET phone_number = 003670/223-7459 WHERE first_name = 'Jemima' AND last_name = 'Foreman';" );
         display.displayMessage("Phone number updated successfully");
     }
+
+
+    @Override
+    public void deleteApplicantByEmail() throws SQLException{
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate( "DELETE FROM applicants WHERE email LIKE '%mauriseu.net';" );
+        display.displayMessage("Records deleted successfully");
+    }
 }

@@ -32,6 +32,11 @@ public class Test {
         // List<String[]> fullApplicantInfo = applicantDAOImpl.getApplicantByApplicationCode();
         // display.displayResultTable(fullApplicantInfo);
 
+        applicantDAOImpl.updatePhoneNumberByName(); // 7
+
+        applicantDAOImpl.deleteApplicantByEmail(); // 8
+
+
         } catch ( SQLException e ) {
             e.printStackTrace();
         }

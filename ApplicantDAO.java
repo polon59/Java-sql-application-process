@@ -17,5 +17,5 @@ public interface ApplicantDAO {
 
     void updatePhoneNumberByName() throws SQLException; // 6
 
-//     void getRowByName() throws SQLException;
+    void deleteApplicantByEmail() throws SQLException; // 7
 }
